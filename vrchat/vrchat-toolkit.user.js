@@ -1,15 +1,15 @@
 // ==UserScript==
 // @name         VRChat Toolkit
-// @namespace    https://github.com/TomatenTim/tampermonkey-scripts
-// @version      0.1.2
+// @namespace    https://github.com/LunyaaDev/tampermonkey-scripts
+// @version      0.1.3
 // @description  Simple toolkit for the VRChat homepage
-// @author       TomatenTim
+// @author       LunyaaDev
 // @match        https://vrchat.com/*
 // @connect      api.vrclist.com
 // @grant        GM_xmlhttpRequest
 // @grant        window.focus
-// @updateURL    https://raw.githubusercontent.com/TomatenTim/tampermonkey-scripts/main/vrchat/vrchat-toolkit.user.js
-// @downloadURL  https://raw.githubusercontent.com/TomatenTim/tampermonkey-scripts/main/vrchat/vrchat-toolkit.user.js
+// @updateURL    https://raw.githubusercontent.com/LunyaaDev/tampermonkey-scripts/main/vrchat/vrchat-toolkit.user.js
+// @downloadURL  https://raw.githubusercontent.com/LunyaaDev/tampermonkey-scripts/main/vrchat/vrchat-toolkit.user.js
 // ==/UserScript==
 
 
@@ -176,7 +176,7 @@ async function resolveWorldID2VRCListID(id) {
 // get ID from the URL
 function getIdFromUrl(url) {
   url = url || location.pathname;
-  const regex = /(grp|avtr|wrld)\_([0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12})$/
+  const regex = /(grp|avtr|wrld)\_([0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12})(\/info)?$/
   return url.match(regex)[0];
 }
 
