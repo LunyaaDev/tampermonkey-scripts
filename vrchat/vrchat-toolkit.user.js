@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         VRChat Toolkit
 // @namespace    https://github.com/LunyaaDev/tampermonkey-scripts
-// @version      0.1.3
+// @version      0.1.4
 // @description  Simple toolkit for the VRChat homepage
 // @author       LunyaaDev
 // @match        https://vrchat.com/*
@@ -176,8 +176,8 @@ async function resolveWorldID2VRCListID(id) {
 // get ID from the URL
 function getIdFromUrl(url) {
   url = url || location.pathname;
-  const regex = /(grp|avtr|wrld)\_([0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12})(\/info)?$/
-  return url.match(regex)[0];
+  const regex = /((grp|avtr|wrld)\_([0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}))(\/info)?$/
+  return url.match(regex)[1];
 }
 
 // https://stackoverflow.com/a/61511955
